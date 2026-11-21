@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071426">
+<title>Forensix AI | Future Roadmap</title>
+<style>
+:root{--bg:#06111f;--panel:#0b1d31;--cyan:#35e6ff;--blue:#598cff;--muted:#a8bdd2;--white:#f3f8ff;--line:rgba(83,208,255,.22)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#12365a 0,transparent 32%),radial-gradient(circle at 0% 35%,#102b48 0,transparent 28%),var(--bg);color:var(--white);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}
+a{color:inherit}.wrap{width:min(1080px,92%);margin:auto}.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:.08em;color:var(--cyan)}.tag{font-size:.78rem;color:var(--muted);border:1px solid var(--line);padding:6px 10px;border-radius:99px}
+.hero{padding:76px 0 56px;text-align:center}.eyebrow{color:var(--cyan);letter-spacing:.2em;font-size:.78rem;font-weight:700}.hero h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.08;margin:18px auto;max-width:900px}.gradient{background:linear-gradient(90deg,#fff,var(--cyan),#8aaaff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--muted);max-width:760px;margin:0 auto;font-size:1.08rem}.hero-line{height:2px;width:130px;margin:30px auto;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 18px var(--cyan)}
+section{padding:34px 0 48px}.section-title{font-size:1.8rem;margin:0 0 8px}.sub{color:var(--muted);margin:0 0 24px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}.card{background:linear-gradient(145deg,rgba(15,42,68,.94),rgba(7,23,40,.94));border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 10px 35px rgba(0,0,0,.16);transition:.25s}.card:hover{transform:translateY(-4px);border-color:rgba(53,230,255,.65);box-shadow:0 12px 35px rgba(15,160,220,.12)}.num{font-size:.8rem;color:var(--cyan);font-weight:800;letter-spacing:.12em}.card h3{margin:8px 0;font-size:1.12rem}.card p{color:var(--muted);margin:0;font-size:.94rem}
+.timeline{border-left:2px solid var(--line);margin:28px 0 0 10px;padding-left:25px}.step{position:relative;margin:0 0 25px}.step:before{content:"";position:absolute;width:11px;height:11px;border-radius:50%;background:var(--cyan);left:-32px;top:8px;box-shadow:0 0 14px var(--cyan)}.step h3{margin:0 0 4px}.step p{margin:0;color:var(--muted)}
+.vision{background:linear-gradient(120deg,rgba(24,77,113,.55),rgba(12,30,55,.65));border:1px solid var(--line);border-radius:22px;padding:30px;text-align:center}.vision h2{margin:0 0 10px}.vision p{color:var(--muted);max-width:780px;margin:auto}
+footer{border-top:1px solid var(--line);padding:25px 0 35px;color:var(--muted);font-size:.85rem;text-align:center}.small{color:#7794ad;font-size:.78rem;margin-top:12px}
+@media(max-width:600px){.hero{padding:55px 0 35px}.nav{gap:10px}.tag{font-size:.68rem}.card{padding:18px}}
+
+.process-flow{display:flex;flex-direction:column;align-items:center;gap:0;margin:28px auto 10px;max-width:850px}
+.flow-node{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:min(100%,620px);min-height:88px;padding:18px 22px;border:1px solid rgba(53,230,255,.38);border-radius:16px;background:linear-gradient(135deg,rgba(13,41,67,.98),rgba(7,25,44,.98));box-shadow:0 0 18px rgba(53,230,255,.07);transition:border-color .25s,box-shadow .25s,transform .25s}
+.flow-node strong{color:#f3f8ff;font-size:1rem;letter-spacing:.035em}
+.flow-node small{color:#a8bdd2;font-size:.84rem;margin-top:5px}
+.flow-step{color:#35e6ff;font-size:.68rem;font-weight:800;letter-spacing:.16em;margin-bottom:5px}
+.flow-node:hover{border-color:#35e6ff;box-shadow:0 0 24px rgba(53,230,255,.18);transform:translateY(-2px)}
+.flow-arrow{height:42px;width:4px;background:rgba(53,230,255,.2);position:relative;overflow:hidden}
+.flow-arrow span{position:absolute;top:-45%;left:0;width:100%;height:45%;background:linear-gradient(180deg,transparent,#35e6ff,transparent);filter:drop-shadow(0 0 5px #35e6ff);animation:flowPulse 1.35s linear infinite}
+.flow-arrow:after{content:"";position:absolute;bottom:1px;left:50%;width:10px;height:10px;border-right:2px solid #35e6ff;border-bottom:2px solid #35e6ff;transform:translateX(-50%) rotate(45deg)}
+@keyframes flowPulse{to{top:110%}}
+.flow-branches{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;position:relative;padding-top:18px;margin:0 0 0}
+.flow-branches:before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:2px;background:linear-gradient(90deg,transparent,#35e6ff,transparent);box-shadow:0 0 9px rgba(53,230,255,.55)}
+.flow-branches .branch{width:100%;min-height:105px;padding:14px 8px}
+.flow-branches .branch strong{font-size:.86rem}
+.flow-branches .branch small{font-size:.75rem}
+.final-node{border-color:rgba(53,230,255,.72);box-shadow:0 0 22px rgba(53,230,255,.13)}
+@media(max-width:560px){.flow-node{min-height:78px;padding:14px 10px}.flow-node strong{font-size:.88rem}.flow-node small{font-size:.76rem}.flow-branches{gap:6px}.flow-branches .branch{padding:12px 5px;min-height:100px}.flow-branches .branch strong{font-size:.72rem}.flow-branches .branch small{font-size:.65rem}.flow-step{font-size:.62rem}}
+
+</style>
+</head>
+<body>
+<header class="wrap nav"><div class="brand">◈ FORENSIX AI</div><div class="tag">SIH26106 · PROJECT ROADMAP</div></header>
+<main class="wrap">
+<section class="hero">
+  <div class="eyebrow">THE NEXT PHASE STARTS HERE</div>
+  <h1><span class="gradient">AI-Powered Email Threat Detection, GeoLocation &amp; Forensic Intelligence Platform</span></h1>
+  <p class="lead">A smarter approach to identifying suspicious emails, analysing threat signals and supporting digital forensic investigations. Explore what we plan to build next.</p>
+  <div class="hero-line"></div>
+  <div class="tag">SIH26106 · FUTURE ROADMAP</div>
+</section>
+
+<section>
+  <h2 class="section-title">Our next steps</h2>
+  <p class="sub">The immediate development priorities for moving from concept towards a working platform.</p>
+  <div class="grid">
+    <article class="card"><div class="num">01 / DETECTION</div><h3>Improve detection accuracy</h3><p>Refine AI models and test them against varied phishing, spam and suspicious-email examples.</p></article>
+    <article class="card"><div class="num">02 / ANALYSIS</div><h3>Strengthen sender analysis</h3><p>Improve the analysis of email headers, sender details, domains and available location signals.</p></article>
+    <article class="card"><div class="num">03 / FORENSICS</div><h3>Build investigation workflow</h3><p>Organise evidence, indicators and analysis results into a clearer forensic investigation process.</p></article>
+    <article class="card"><div class="num">04 / VALIDATION</div><h3>Test and evaluate</h3><p>Run controlled tests, measure performance and improve reliability, usability and response time.</p></article>
+  </div>
+</section>
+
+
+<section id="architecture">
+  <h2 class="section-title">System architecture</h2>
+  <p class="sub">A continuous animated workflow built from webpage text and connected stages—not a pasted image.</p>
+  <div class="card" style="padding:14px">
+    
+<div class="process-flow" aria-label="Forensix AI system process flow">
+  <div class="flow-node"><span class="flow-step">01</span><strong>USER / INVESTIGATOR</strong><small>Secure analysis workspace</small></div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-node"><span class="flow-step">02</span><strong>EMAIL UPLOAD (.EML)</strong><small>Email file input</small></div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-node"><span class="flow-step">03</span><strong>EMAIL ANALYSIS ENGINE</strong><small>Parsing · extraction · analysis</small></div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-branches">
+    <div class="flow-node branch"><span class="flow-step">A</span><strong>NLP AI</strong><small>Content &amp; language</small></div>
+    <div class="flow-node branch"><span class="flow-step">B</span><strong>HEADER ANALYSIS</strong><small>Sender &amp; routing</small></div>
+    <div class="flow-node branch"><span class="flow-step">C</span><strong>DOMAIN ANALYSIS</strong><small>Domain reputation</small></div>
+  </div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-node"><span class="flow-step">04</span><strong>AUTHENTICATION CHECK</strong><small>SPF · DKIM · DMARC</small></div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-node"><span class="flow-step">05</span><strong>IP &amp; GEOLOCATION INTELLIGENCE</strong><small>IP signals · geographic context</small></div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-node"><span class="flow-step">06</span><strong>THREAT RISK SCORE</strong><small>Risk assessment</small></div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-node"><span class="flow-step">07</span><strong>FORENSIC INVESTIGATION</strong><small>Evidence review &amp; correlation</small></div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-node"><span class="flow-step">08</span><strong>SECURITY DASHBOARD</strong><small>Investigation results</small></div>
+  <div class="flow-arrow"><span></span></div>
+  <div class="flow-node final-node"><span class="flow-step">09</span><strong>PDF REPORT</strong><small>Structured findings</small></div>
+</div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Upcoming upgrades</h2>
+  <p class="sub">Planned features for future versions. These are roadmap goals, not features currently claimed as complete.</p>
+  <div class="grid">
+    <article class="card"><div class="num">FUTURE UPGRADE 01</div><h3>Real-time threat monitoring</h3><p>Explore near-real-time alerts and monitoring for suspicious email activity.</p></article>
+    <article class="card"><div class="num">FUTURE UPGRADE 02</div><h3>Advanced AI threat prediction</h3><p>Investigate models that can identify emerging patterns and suspicious behaviour.</p></article>
+    <article class="card"><div class="num">FUTURE UPGRADE 03</div><h3>Interactive intelligence dashboard</h3><p>Present threat indicators, analysis summaries and investigation status in one interface.</p></article>
+    <article class="card"><div class="num">FUTURE UPGRADE 04</div><h3>Automated forensic reports</h3><p>Generate structured reports that help investigators review findings and evidence.</p></article>
+    <article class="card"><div class="num">FUTURE UPGRADE 05</div><h3>Broader language support</h3><p>Explore multilingual email analysis to support a wider range of users and messages.</p></article>
+    <article class="card"><div class="num">FUTURE UPGRADE 06</div><h3>Threat intelligence integration</h3><p>Explore trusted threat-intelligence sources to enrich domain and indicator analysis.</p></article>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Development roadmap</h2>
+  <p class="sub">A proposed sequence. The schedule can be updated as the project evolves.</p>
+  <div class="timeline">
+    <div class="step"><h3>Phase 1 — Core prototype</h3><p>Build the essential email analysis, threat detection and results workflow.</p></div>
+    <div class="step"><h3>Phase 2 — Testing &amp; refinement</h3><p>Evaluate model performance, improve detection and validate analysis outputs.</p></div>
+    <div class="step"><h3>Phase 3 — Intelligence dashboard</h3><p>Bring threat indicators, geolocation signals and forensic findings into a unified view.</p></div>
+    <div class="step"><h3>Phase 4 — Advanced capabilities</h3><p>Explore real-time monitoring, automated reporting and expanded intelligence integrations.</p></div>
+  </div>
+</section>
+
+<section><div class="vision"><div class="eyebrow">OUR LONG-TERM VISION</div><h2>Make email security more intelligent.</h2><p>Our goal is to develop a reliable, user-friendly platform that helps detect email threats, interpret useful intelligence and support digital forensic investigations — with responsible use of data and clear evidence handling.</p></div></section>
+</main>
+<footer><div class="wrap">SIH26106 · AI-Powered Email Threat Detection, GeoLocation and Forensic Intelligence Platform<div class="small">Roadmap preview — proposed future development, subject to testing and project feasibility.</div></div></footer>
+</body></html>
